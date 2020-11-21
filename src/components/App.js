@@ -1,7 +1,7 @@
 import React, { Component, useState } from "react";
 import "../styles/App.css";
 import slides from "../data.js";
-import Slides from "Slides.jsx";
+import Slides from "./Slides";
 
 const App = () => {
   //console.log(slides);
