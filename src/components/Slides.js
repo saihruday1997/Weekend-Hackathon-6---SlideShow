@@ -5,7 +5,7 @@ const Slides = (props) => {
   const [index, setIndex] = useState(0);
   const [nextdis, setNextdis] = useState(false);
   const [prevdis, setPrevdis] = useState(false);
-  const [resetdis, setResetdis] = useState(false);
+  const [resetdis, setResetdis] = useState(true);
 
   return (
     <>
@@ -14,21 +14,42 @@ const Slides = (props) => {
       <button
         data-testid="button-prev"
         disabled={prevdis}
-        onClick={setIndex(index - 1)}
+        onClick={
+          index === 0
+            ? setPrevdis(true)
+            : (() => {
+                setIndex(index - 1);
+                setPrevdis(false);
+              })()
+        }
       >
         PREV
       </button>
       <button
         data-testid="button-next"
         disabled={nextdis}
-        onClick={setIndex(index + 1)}
+        onClick={
+          index === props.slidesList.length - 1
+            ? setNextdis(true)
+            : (() => {
+                setIndex(index + 1);
+                setNextdis(false);
+              })()
+        }
       >
         NEXT
       </button>
       <button
         data-testid="button-restart"
         disabled={resetdis}
-        onClick={setIndex(0)}
+        onClick={
+          index !== 0
+            ? (() => {
+                setResetdis(false);
+                setIndex(0);
+              })()
+            : setResetdis(false)
+        }
       >
         RESTART
       </button>
