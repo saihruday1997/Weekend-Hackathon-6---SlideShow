@@ -3,7 +3,7 @@ import "../styles/App.css";
 
 const App = (props) => {
   const [index, setIndex] = useState(0);
-  const allSlides = props.slidesList;
+  const allSlides = props.slides;
   const length = allSlides.length;
 
   let title = allSlides[index].title;
