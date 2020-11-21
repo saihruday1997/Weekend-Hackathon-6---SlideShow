@@ -22,7 +22,7 @@ const App = (props) => {
           }
         }}
       >
-        PREV
+        Prev
       </button>
       <button
         data-testid="button-next"
@@ -33,14 +33,14 @@ const App = (props) => {
           }
         }}
       >
-        NEXT
+        Next
       </button>
       <button
         data-testid="button-restart"
         disabled={index === 0}
         onClick={() => setIndex(0)}
       >
-        RESTART
+        Restart
       </button>
     </>
   );
