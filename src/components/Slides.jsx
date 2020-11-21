@@ -12,3 +12,5 @@ const Slides = (props) => {
     </>
   );
 };
+
+export default Slides;
